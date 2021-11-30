@@ -48,7 +48,7 @@ class Wheel {
     draw() {
 
         // set translation and scaling before rotating context
-        context.setTransform(1, 0, 0, 1, 0, 0);
+        context.setTransform(dpr, 0, 0, dpr, 0, 0);
         context.rotate(this.angle);
 
         // create a new path
@@ -56,8 +56,8 @@ class Wheel {
 
         // create arc
         this.context.arc(
-            this.canvasDimensions.width / 2, // our x start point (centre of arc)
-            this.canvasDimensions.height / 1.8, // our y start point (centre of arc)
+            (this.canvasDimensions.width / 2 * dpr), // our x start point (centre of arc)
+            (this.canvasDimensions.height / 1.8 * dpr), // our y start point (centre of arc)
             this.radius, // the radius from centre of arc
             0, // start of arc line
             Math.PI * 1.8, // end of line (Math.PI * 2 === full circle)
